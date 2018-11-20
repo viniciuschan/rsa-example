@@ -7,6 +7,7 @@ Author: Vinícius Chan
 
 * [Python2.7](https://www.python.org/download/releases/2.7/)
 * [Virtualenv](https://virtualenv.pypa.io/en/stable/installation/)
+* [RSA] (https://pypi.org/project/rsa/)
 
 
 ### Getting Started
