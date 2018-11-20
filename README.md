@@ -20,9 +20,8 @@ $ source <path>/bin/activate
 Install rsa on virtualenv:
 
 ```
-$ pip install rsa
+$ pip install rsa==4.0
 ```
-
 
 Run application:
 

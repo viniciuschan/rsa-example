@@ -2,7 +2,7 @@
 import rsa
 
 
-class RSA():
+class RSA(object):
     def create_keys(self):
         (public, private) = rsa.newkeys(2048)
         
