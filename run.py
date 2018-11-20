@@ -1,4 +1,4 @@
-from rsa.my_rsa import RSA
+from my_rsa.core import RSA
 
 rsa = RSA()
 rsa.create_keys()

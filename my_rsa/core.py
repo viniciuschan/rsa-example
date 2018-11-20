@@ -2,22 +2,20 @@
 import rsa
 
 
-class RSA(object):
+class RSA():
     def create_keys(self):
-        (public, private) = rsa.newkeys(int(2048))
+        (public, private) = rsa.newkeys(2048)
         
         # Creating a public key
         public_key = 'public_key.txt'
         #Format public key to .PEM
         with open(public_key,'w') as file:
             file.write(public.save_pkcs1(format='PEM'))
-            file.close()
 
         # Creating a private key
         private_key = 'private_key.txt' 
         with open(private_key,'w') as file:
             file.write(private.save_pkcs1(format='PEM'))
-            file.close()
 
         print ('Public key created: {}'.format(public_key))
         print ('Private key created: {}\n'.format(private_key))
@@ -40,7 +38,7 @@ class RSA(object):
 
         decrypted_message = rsa.decrypt(message_to_decrypt, private_key)
         
-        print 'Message: {} \n'.format(decrypted_message)
+        print ('Message: {} \n'.format(decrypted_message))
 
     def encrypt(self):
         public_key_file = 'public_key.txt'
@@ -53,13 +51,13 @@ class RSA(object):
 
         public_key = rsa.PublicKey.load_pkcs1(key, format='PEM')
 
-        encrypt_message = rsa.encrypt(message, public_key)
+        encrypted_message = rsa.encrypt(message, public_key)
 
         encrypted_file = 'encrypted.txt'
         with open(encrypted_file, 'w') as file:
-            file.write(encrypt_message)
+            file.write(encrypted_message)
 
-        print 'Message encrypted in file {} \n'.format(encrypted_file)
+        print ('Message encrypted: {} \n'.format(encrypted_message))
 
 
 if __name__ == '__main__':
